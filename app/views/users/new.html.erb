@@ -1,0 +1,7 @@
+<%= form_for @user, url: {action: :create} do |f| %>
+    <%= f.label :uid, 'ID' %>
+    <p><%= f.text_area :uid, size: "50x1" %></p>
+    <%= f.label :pass, 'パスワード' %>
+    <p><%= f.text_area :pass, size: "50x1" %></p>
+    <%= f.submit '登録' %>
+<% end %>
