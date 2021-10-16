@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         @user = User.new
     end
     def create
-        @user = User.new(uid: params[:user][:uid])
+        @user = User.new(uid: params[:user][:uid], pass: params[:user][:pass])
         if @user.save
             flash[:notice] = '1件登録しました'
             redirect_to '/'
