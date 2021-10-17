@@ -1,12 +1,27 @@
 Rails.application.routes.draw do
+    resources  :tweets, :users
+    root 'users#index'
+    #root 'tweets#index'
+    #root 'tops#login_form'
+    
+    get 'tops/main'
+    get 'tops/login'
+    post 'tops/login'
+    get 'tops/logout'
+    #root 'top#main'
+    
     get 'tweets/index', to: 'tweets#index'
-    root 'tweets#index'
     get 'tweets/new', to: 'tweets#new'
     post 'tweets', to: 'tweets#create'
-    delete 'tweets/:id', to: 'tweets#destroy'
+    
     get 'users/index', to: 'users#index'
-    #root 'users#index'
     get 'users/new', to: 'users#new'
     post 'users', to: 'users#create'
-    delete 'users/:id', to: 'users#destroy'
+
+=begin
+    get 'top/main'
+    post 'top/login'
+    root 'top#main'
+    get 'top/logout'
+=end
 end

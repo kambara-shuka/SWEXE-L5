@@ -1,5 +1,3 @@
-<p><%= link_to 'ユーザー一覧', '/users/index' %></p>
-
 <% if flash[:notice] %>
     <%= flash[:notice] %>
 <% end %>
@@ -11,3 +9,7 @@
 <% end %>
 
 <p><%= link_to 'ツイートする', '/tweets/new' %></p>
+
+<p><%= link_to 'ユーザー一覧', '/users/index' %></p>
+
+<p><%= link_to 'ログイン', '/tops/login_form' %></p>
