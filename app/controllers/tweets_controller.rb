@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new
     end
     def create
-        @tweet = Tweet.new(user_id: 21, message: params[:tweet][:message])
+        @tweet = Tweet.new(user_id: 25, message: params[:tweet][:message])
         if @tweet.save
             flash[:notice] = '1件ツイートしました'
             redirect root_path

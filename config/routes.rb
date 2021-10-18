@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    resources  :tweets, :users
+    resources  :tweets, :users #,:tops
     root 'users#index'
     #root 'tweets#index'
     #root 'tops#login_form'
