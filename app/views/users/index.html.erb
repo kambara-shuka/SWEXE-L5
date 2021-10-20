@@ -2,12 +2,11 @@
     <p>
         <b>ID:</b> <%= e.uid %>
         <b>pass:</b> <%= e.pass %>
-        <%= link_to '削除', "/users/#{e.id}", method: :delete %>
+        <%= link_to '削除', user_path(e), method: :delete %>
     </p>
 <% end %>
 
-<p><%= link_to 'ユーザー登録', '/users/new' %></p>
 
-<p><%= link_to 'ツイート', '/tweets/' %></p>
+<p><%= link_to 'ユーザー登録', new_user_path %></p>
 
-<p><%= link_to 'ログイン', '/tops/' %></p>
+<p><%= link_to 'ツイート一覧', tweets_path %></p>

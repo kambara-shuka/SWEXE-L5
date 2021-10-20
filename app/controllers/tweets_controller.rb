@@ -6,10 +6,11 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new
     end
     def create
-        @tweet = Tweet.new(user_id: 25, message: params[:tweet][:message])
+        user = User.find_by(uid: session[:login_uid])
+        @tweet = Tweet.new(user_id: user.id, message: params[:tweet][:message])
         if @tweet.save
             flash[:notice] = '1件ツイートしました'
-            redirect root_path
+            redirect_to root_path
         else
             render 'new'
         end
@@ -18,6 +19,6 @@ class TweetsController < ApplicationController
         tweet = Tweet.find(params[:id])
         tweet.destroy
         flash[:notice] = 'ツイートを削除しました'
-        render 'index'
+        redirect_to root_path
     end
 end
